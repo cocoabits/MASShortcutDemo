@@ -1,4 +1,8 @@
 #import "AppDelegate.h"
+#import "MASShortcutView.h"
+#import "MASShortcutView+UserDefaults.h"
+
+NSString *const kPreferenceKeyShortcut = @"DemoShortcut";
 
 @implementation AppDelegate
 
@@ -6,7 +10,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    
+    self.shortcutView.associatedUserDefaultsKey = kPreferenceKeyShortcut;
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender

@@ -8,27 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		D7FB692315A6E9FF00239C16 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7FB692215A6E9FF00239C16 /* Cocoa.framework */; };
-		D7FB692D15A6E9FF00239C16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7FB692B15A6E9FF00239C16 /* InfoPlist.strings */; };
-		D7FB692F15A6E9FF00239C16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB692E15A6E9FF00239C16 /* main.m */; };
-		D7FB693315A6E9FF00239C16 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D7FB693115A6E9FF00239C16 /* Credits.rtf */; };
-		D7FB693615A6E9FF00239C16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB693515A6E9FF00239C16 /* AppDelegate.m */; };
-		D7FB693915A6E9FF00239C16 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7FB693715A6E9FF00239C16 /* MainMenu.xib */; };
+		D7FB694615A6F5D300239C16 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7FB694515A6F5D300239C16 /* Carbon.framework */; };
+		D7FB695215A6FC2A00239C16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB695115A6FC2A00239C16 /* AppDelegate.m */; };
+		D7FB695415A6FC3300239C16 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7FB695315A6FC3300239C16 /* MainMenu.xib */; };
+		D7FB695915A6FC3E00239C16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB695715A6FC3E00239C16 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D7FB691E15A6E9FF00239C16 /* MASShortcutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MASShortcutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7FB691E15A6E9FF00239C16 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7FB692215A6E9FF00239C16 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D7FB692515A6E9FF00239C16 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		D7FB692615A6E9FF00239C16 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D7FB692715A6E9FF00239C16 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D7FB692A15A6E9FF00239C16 /* MASShortcutDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MASShortcutDemo-Info.plist"; sourceTree = "<group>"; };
-		D7FB692C15A6E9FF00239C16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D7FB692E15A6E9FF00239C16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D7FB693015A6E9FF00239C16 /* MASShortcutDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MASShortcutDemo-Prefix.pch"; sourceTree = "<group>"; };
-		D7FB693215A6E9FF00239C16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		D7FB693415A6E9FF00239C16 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D7FB693515A6E9FF00239C16 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D7FB693815A6E9FF00239C16 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D7FB694515A6F5D300239C16 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		D7FB695015A6FC2A00239C16 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Demo/AppDelegate.h; sourceTree = "<group>"; };
+		D7FB695115A6FC2A00239C16 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Demo/AppDelegate.m; sourceTree = "<group>"; };
+		D7FB695315A6FC3300239C16 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = Demo/MainMenu.xib; sourceTree = "<group>"; };
+		D7FB695515A6FC3E00239C16 /* Demo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Demo-Info.plist"; path = "Demo/Demo-Info.plist"; sourceTree = SOURCE_ROOT; };
+		D7FB695615A6FC3E00239C16 /* Demo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Demo-Prefix.pch"; path = "Demo/Demo-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		D7FB695715A6FC3E00239C16 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Demo/main.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7FB694615A6F5D300239C16 /* Carbon.framework in Frameworks */,
 				D7FB692315A6E9FF00239C16 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,7 +44,9 @@
 		D7FB691315A6E9FF00239C16 = {
 			isa = PBXGroup;
 			children = (
-				D7FB692815A6E9FF00239C16 /* MASShortcutDemo */,
+				D7FB694715A6F61900239C16 /* Controllers */,
+				D7FB694815A6F62200239C16 /* XIBs */,
+				D7FB692915A6E9FF00239C16 /* Supporting Files */,
 				D7FB692115A6E9FF00239C16 /* Frameworks */,
 				D7FB691F15A6E9FF00239C16 /* Products */,
 			);
@@ -55,7 +55,7 @@
 		D7FB691F15A6E9FF00239C16 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D7FB691E15A6E9FF00239C16 /* MASShortcutDemo.app */,
+				D7FB691E15A6E9FF00239C16 /* Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,51 +63,48 @@
 		D7FB692115A6E9FF00239C16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7FB692715A6E9FF00239C16 /* Foundation.framework */,
+				D7FB692515A6E9FF00239C16 /* AppKit.framework */,
+				D7FB694515A6F5D300239C16 /* Carbon.framework */,
 				D7FB692215A6E9FF00239C16 /* Cocoa.framework */,
-				D7FB692415A6E9FF00239C16 /* Other Frameworks */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D7FB692415A6E9FF00239C16 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D7FB692515A6E9FF00239C16 /* AppKit.framework */,
-				D7FB692615A6E9FF00239C16 /* CoreData.framework */,
-				D7FB692715A6E9FF00239C16 /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
-		D7FB692815A6E9FF00239C16 /* MASShortcutDemo */ = {
-			isa = PBXGroup;
-			children = (
-				D7FB693415A6E9FF00239C16 /* AppDelegate.h */,
-				D7FB693515A6E9FF00239C16 /* AppDelegate.m */,
-				D7FB693715A6E9FF00239C16 /* MainMenu.xib */,
-				D7FB692915A6E9FF00239C16 /* Supporting Files */,
-			);
-			path = MASShortcutDemo;
 			sourceTree = "<group>";
 		};
 		D7FB692915A6E9FF00239C16 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D7FB692A15A6E9FF00239C16 /* MASShortcutDemo-Info.plist */,
-				D7FB692B15A6E9FF00239C16 /* InfoPlist.strings */,
-				D7FB692E15A6E9FF00239C16 /* main.m */,
-				D7FB693015A6E9FF00239C16 /* MASShortcutDemo-Prefix.pch */,
-				D7FB693115A6E9FF00239C16 /* Credits.rtf */,
+				D7FB695515A6FC3E00239C16 /* Demo-Info.plist */,
+				D7FB695615A6FC3E00239C16 /* Demo-Prefix.pch */,
+				D7FB695715A6FC3E00239C16 /* main.m */,
 			);
 			name = "Supporting Files";
+			path = MASShortcutDemo;
+			sourceTree = "<group>";
+		};
+		D7FB694715A6F61900239C16 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D7FB695015A6FC2A00239C16 /* AppDelegate.h */,
+				D7FB695115A6FC2A00239C16 /* AppDelegate.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D7FB694815A6F62200239C16 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				D7FB695315A6FC3300239C16 /* MainMenu.xib */,
+			);
+			name = XIBs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D7FB691D15A6E9FF00239C16 /* MASShortcutDemo */ = {
+		D7FB691D15A6E9FF00239C16 /* Demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D7FB693C15A6E9FF00239C16 /* Build configuration list for PBXNativeTarget "MASShortcutDemo" */;
+			buildConfigurationList = D7FB693C15A6E9FF00239C16 /* Build configuration list for PBXNativeTarget "Demo" */;
 			buildPhases = (
 				D7FB691A15A6E9FF00239C16 /* Sources */,
 				D7FB691B15A6E9FF00239C16 /* Frameworks */,
@@ -117,9 +114,9 @@
 			);
 			dependencies = (
 			);
-			name = MASShortcutDemo;
+			name = Demo;
 			productName = MASShortcutDemo;
-			productReference = D7FB691E15A6E9FF00239C16 /* MASShortcutDemo.app */;
+			productReference = D7FB691E15A6E9FF00239C16 /* Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -131,7 +128,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Vadim Shpakovski";
 			};
-			buildConfigurationList = D7FB691815A6E9FF00239C16 /* Build configuration list for PBXProject "MASShortcutDemo" */;
+			buildConfigurationList = D7FB691815A6E9FF00239C16 /* Build configuration list for PBXProject "Demo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -143,7 +140,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D7FB691D15A6E9FF00239C16 /* MASShortcutDemo */,
+				D7FB691D15A6E9FF00239C16 /* Demo */,
 			);
 		};
 /* End PBXProject section */
@@ -153,9 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7FB692D15A6E9FF00239C16 /* InfoPlist.strings in Resources */,
-				D7FB693315A6E9FF00239C16 /* Credits.rtf in Resources */,
-				D7FB693915A6E9FF00239C16 /* MainMenu.xib in Resources */,
+				D7FB695415A6FC3300239C16 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,39 +161,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7FB692F15A6E9FF00239C16 /* main.m in Sources */,
-				D7FB693615A6E9FF00239C16 /* AppDelegate.m in Sources */,
+				D7FB695215A6FC2A00239C16 /* AppDelegate.m in Sources */,
+				D7FB695915A6FC3E00239C16 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		D7FB692B15A6E9FF00239C16 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D7FB692C15A6E9FF00239C16 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		D7FB693115A6E9FF00239C16 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D7FB693215A6E9FF00239C16 /* en */,
-			);
-			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		D7FB693715A6E9FF00239C16 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D7FB693815A6E9FF00239C16 /* en */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D7FB693A15A6E9FF00239C16 /* Debug */ = {
@@ -255,9 +223,9 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MASShortcutDemo/MASShortcutDemo-Prefix.pch";
-				INFOPLIST_FILE = "MASShortcutDemo/MASShortcutDemo-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
+				INFOPLIST_FILE = "Demo/Demo-Info.plist";
+				PRODUCT_NAME = Demo;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -267,9 +235,9 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MASShortcutDemo/MASShortcutDemo-Prefix.pch";
-				INFOPLIST_FILE = "MASShortcutDemo/MASShortcutDemo-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
+				INFOPLIST_FILE = "Demo/Demo-Info.plist";
+				PRODUCT_NAME = Demo;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -277,7 +245,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D7FB691815A6E9FF00239C16 /* Build configuration list for PBXProject "MASShortcutDemo" */ = {
+		D7FB691815A6E9FF00239C16 /* Build configuration list for PBXProject "Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D7FB693A15A6E9FF00239C16 /* Debug */,
@@ -286,13 +254,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D7FB693C15A6E9FF00239C16 /* Build configuration list for PBXNativeTarget "MASShortcutDemo" */ = {
+		D7FB693C15A6E9FF00239C16 /* Build configuration list for PBXNativeTarget "Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D7FB693D15A6E9FF00239C16 /* Debug */,
 				D7FB693E15A6E9FF00239C16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

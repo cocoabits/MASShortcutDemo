@@ -12,6 +12,8 @@
 		D7FB695215A6FC2A00239C16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB695115A6FC2A00239C16 /* AppDelegate.m */; };
 		D7FB695415A6FC3300239C16 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7FB695315A6FC3300239C16 /* MainMenu.xib */; };
 		D7FB695915A6FC3E00239C16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB695715A6FC3E00239C16 /* main.m */; };
+		D7FB695E15A6FE4500239C16 /* MASShortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB695B15A6FE4500239C16 /* MASShortcut.m */; };
+		D7FB695F15A6FE4500239C16 /* MASShortcutView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB695D15A6FE4500239C16 /* MASShortcutView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		D7FB695515A6FC3E00239C16 /* Demo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Demo-Info.plist"; path = "Demo/Demo-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D7FB695615A6FC3E00239C16 /* Demo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Demo-Prefix.pch"; path = "Demo/Demo-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		D7FB695715A6FC3E00239C16 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Demo/main.m; sourceTree = SOURCE_ROOT; };
+		D7FB695A15A6FE4500239C16 /* MASShortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASShortcut.h; path = MASShortcut/MASShortcut.h; sourceTree = "<group>"; };
+		D7FB695B15A6FE4500239C16 /* MASShortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MASShortcut.m; path = MASShortcut/MASShortcut.m; sourceTree = "<group>"; };
+		D7FB695C15A6FE4500239C16 /* MASShortcutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASShortcutView.h; path = MASShortcut/MASShortcutView.h; sourceTree = "<group>"; };
+		D7FB695D15A6FE4500239C16 /* MASShortcutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MASShortcutView.m; path = MASShortcut/MASShortcutView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +50,7 @@
 		D7FB691315A6E9FF00239C16 = {
 			isa = PBXGroup;
 			children = (
+				D7FB696015A6FE4900239C16 /* MASShortcut */,
 				D7FB694715A6F61900239C16 /* Controllers */,
 				D7FB694815A6F62200239C16 /* XIBs */,
 				D7FB692915A6E9FF00239C16 /* Supporting Files */,
@@ -97,6 +104,17 @@
 				D7FB695315A6FC3300239C16 /* MainMenu.xib */,
 			);
 			name = XIBs;
+			sourceTree = "<group>";
+		};
+		D7FB696015A6FE4900239C16 /* MASShortcut */ = {
+			isa = PBXGroup;
+			children = (
+				D7FB695A15A6FE4500239C16 /* MASShortcut.h */,
+				D7FB695B15A6FE4500239C16 /* MASShortcut.m */,
+				D7FB695C15A6FE4500239C16 /* MASShortcutView.h */,
+				D7FB695D15A6FE4500239C16 /* MASShortcutView.m */,
+			);
+			name = MASShortcut;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +181,8 @@
 			files = (
 				D7FB695215A6FC2A00239C16 /* AppDelegate.m in Sources */,
 				D7FB695915A6FC3E00239C16 /* main.m in Sources */,
+				D7FB695E15A6FE4500239C16 /* MASShortcut.m in Sources */,
+				D7FB695F15A6FE4500239C16 /* MASShortcutView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

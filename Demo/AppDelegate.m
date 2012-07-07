@@ -8,6 +8,11 @@ NSString *const kPreferenceKeyShortcutEnabled = @"DemoShortcutEnabled";
 
 @implementation AppDelegate
 
+@synthesize window = _window;
+@synthesize shortcutView = _shortcutView;
+
+#pragma mark -
+
 - (void)awakeFromNib
 {
     // Checkbox will enable and disable the shortcut view
@@ -26,6 +31,9 @@ NSString *const kPreferenceKeyShortcutEnabled = @"DemoShortcutEnabled";
 {
     // Shortcut view will follow and modify user preferences automatically
     self.shortcutView.associatedUserDefaultsKey = kPreferenceKeyShortcut;
+    
+    // Activate the global keyboard shortcut if it was enabled last time
+    [self resetShortcutRegistration];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
@@ -44,20 +52,24 @@ NSString *const kPreferenceKeyShortcutEnabled = @"DemoShortcutEnabled";
 {
     if (self.isShortcutEnabled != enabled) {
         [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:kPreferenceKeyShortcutEnabled];
+        [self resetShortcutRegistration];
+    }
+}
 
-        if (enabled) {
-            [MASShortcut registerGlobalShortcutWithUserDefaultsKey:kPreferenceKeyShortcut handler:^{
-                if ([NSRunningApplication currentApplication].isActive) {
-                    [[NSApp windows].lastObject zoom:nil];
-                }
-                else {
-                    [NSApp requestUserAttention:NSInformationalRequest];
-                }
-            }];
-        }
-        else {
-            [MASShortcut unregisterGlobalShortcutWithUserDefaultsKey:kPreferenceKeyShortcut];
-        }
+- (void)resetShortcutRegistration
+{
+    if ([self isShortcutEnabled]) {
+        [MASShortcut registerGlobalShortcutWithUserDefaultsKey:kPreferenceKeyShortcut handler:^{
+            if ([NSRunningApplication currentApplication].isActive) {
+                [[NSApp windows].lastObject zoom:nil];
+            }
+            else {
+                [NSApp requestUserAttention:NSInformationalRequest];
+            }
+        }];
+    }
+    else {
+        [MASShortcut unregisterGlobalShortcutWithUserDefaultsKey:kPreferenceKeyShortcut];
     }
 }
 

@@ -12,6 +12,6 @@ This is a test app for the project [MASShortcut](https://github.com/shpakovski/M
 
 Hit `Command-R` to build and run the project in Xcode.
 
-# License
+# Copyright
 
 This project is released under the BSD License.

@@ -50,7 +50,7 @@ NSString *const kPreferenceKeyShortcutEnabled = @"DemoShortcutEnabled";
 
 - (void)setShortcutEnabled:(BOOL)enabled
 {
-    if (self.isShortcutEnabled != enabled) {
+    if (self.shortcutEnabled != enabled) {
         [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:kPreferenceKeyShortcutEnabled];
         [self resetShortcutRegistration];
     }
@@ -58,7 +58,7 @@ NSString *const kPreferenceKeyShortcutEnabled = @"DemoShortcutEnabled";
 
 - (void)resetShortcutRegistration
 {
-    if ([self isShortcutEnabled]) {
+    if (self.shortcutEnabled) {
         [MASShortcut registerGlobalShortcutWithUserDefaultsKey:kPreferenceKeyShortcut handler:^{
             if ([NSRunningApplication currentApplication].isActive) {
                 [[NSApp windows].lastObject zoom:nil];

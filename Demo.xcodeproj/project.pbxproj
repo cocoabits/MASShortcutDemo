@@ -14,9 +14,6 @@
 		D7FB695415A6FC3300239C16 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7FB695315A6FC3300239C16 /* MainMenu.xib */; };
 		D7FB695915A6FC3E00239C16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB695715A6FC3E00239C16 /* main.m */; };
 		D7FB695E15A6FE4500239C16 /* MASShortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB695B15A6FE4500239C16 /* MASShortcut.m */; };
-		D7FB695F15A6FE4500239C16 /* MASShortcutView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB695D15A6FE4500239C16 /* MASShortcutView.m */; };
-		D7FB696315A70DA500239C16 /* MASShortcutView+UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB696215A70DA500239C16 /* MASShortcutView+UserDefaults.m */; };
-		D7FB696E15A7435C00239C16 /* MASShortcut+UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB696D15A7435C00239C16 /* MASShortcut+UserDefaults.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,12 +32,6 @@
 		D7FB695715A6FC3E00239C16 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Demo/main.m; sourceTree = SOURCE_ROOT; };
 		D7FB695A15A6FE4500239C16 /* MASShortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASShortcut.h; path = MASShortcut/MASShortcut.h; sourceTree = "<group>"; };
 		D7FB695B15A6FE4500239C16 /* MASShortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MASShortcut.m; path = MASShortcut/MASShortcut.m; sourceTree = "<group>"; };
-		D7FB695C15A6FE4500239C16 /* MASShortcutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASShortcutView.h; path = MASShortcut/MASShortcutView.h; sourceTree = "<group>"; };
-		D7FB695D15A6FE4500239C16 /* MASShortcutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MASShortcutView.m; path = MASShortcut/MASShortcutView.m; sourceTree = "<group>"; };
-		D7FB696115A70DA500239C16 /* MASShortcutView+UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MASShortcutView+UserDefaults.h"; path = "MASShortcut/MASShortcutView+UserDefaults.h"; sourceTree = "<group>"; };
-		D7FB696215A70DA500239C16 /* MASShortcutView+UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MASShortcutView+UserDefaults.m"; path = "MASShortcut/MASShortcutView+UserDefaults.m"; sourceTree = "<group>"; };
-		D7FB696415A7299800239C16 /* MASShortcut+UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MASShortcut+UserDefaults.h"; path = "MASShortcut/MASShortcut+UserDefaults.h"; sourceTree = "<group>"; };
-		D7FB696D15A7435C00239C16 /* MASShortcut+UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MASShortcut+UserDefaults.m"; path = "MASShortcut/MASShortcut+UserDefaults.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,12 +111,6 @@
 			children = (
 				D7FB695A15A6FE4500239C16 /* MASShortcut.h */,
 				D7FB695B15A6FE4500239C16 /* MASShortcut.m */,
-				D7FB695C15A6FE4500239C16 /* MASShortcutView.h */,
-				D7FB695D15A6FE4500239C16 /* MASShortcutView.m */,
-				D7FB696115A70DA500239C16 /* MASShortcutView+UserDefaults.h */,
-				D7FB696215A70DA500239C16 /* MASShortcutView+UserDefaults.m */,
-				D7FB696415A7299800239C16 /* MASShortcut+UserDefaults.h */,
-				D7FB696D15A7435C00239C16 /* MASShortcut+UserDefaults.m */,
 				D715192E1609CA1B005AAD95 /* MASShortcut+Monitoring.h */,
 				D715192F1609CA1B005AAD95 /* MASShortcut+Monitoring.m */,
 			);
@@ -197,9 +182,6 @@
 				D7FB695215A6FC2A00239C16 /* AppDelegate.m in Sources */,
 				D7FB695915A6FC3E00239C16 /* main.m in Sources */,
 				D7FB695E15A6FE4500239C16 /* MASShortcut.m in Sources */,
-				D7FB695F15A6FE4500239C16 /* MASShortcutView.m in Sources */,
-				D7FB696315A70DA500239C16 /* MASShortcutView+UserDefaults.m in Sources */,
-				D7FB696E15A7435C00239C16 /* MASShortcut+UserDefaults.m in Sources */,
 				D71519301609CA1B005AAD95 /* MASShortcut+Monitoring.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,11 +241,12 @@
 		D7FB693D15A6E9FF00239C16 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
 				INFOPLIST_FILE = "Demo/Demo-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = Demo;
 				WRAPPER_EXTENSION = app;
 			};
@@ -272,11 +255,12 @@
 		D7FB693E15A6E9FF00239C16 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
 				INFOPLIST_FILE = "Demo/Demo-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = Demo;
 				WRAPPER_EXTENSION = app;
 			};

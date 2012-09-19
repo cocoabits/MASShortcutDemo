@@ -1,80 +1,24 @@
 #import "AppDelegate.h"
-#import "MASShortcutView.h"
-#import "MASShortcutView+UserDefaults.h"
-#import "MASShortcut+UserDefaults.h"
 #import "MASShortcut+Monitoring.h"
 
-NSString *const kPreferenceKeyShortcut = @"DemoShortcut";
-NSString *const kPreferenceKeyShortcutEnabled = @"DemoShortcutEnabled";
 NSString *const kPreferenceKeyConstantShortcutEnabled = @"DemoConstantShortcutEnabled";
 
 @implementation AppDelegate {
-    __weak id _constantShortcutMonitor;
-}
-
-@synthesize window = _window;
-@synthesize shortcutView = _shortcutView;
-
-#pragma mark -
-
-- (void)awakeFromNib
-{
-    // Checkbox will enable and disable the shortcut view
-    [self.shortcutView bind:@"enabled" toObject:self withKeyPath:@"shortcutEnabled" options:nil];
-}
-
-- (void)dealloc
-{
-    // Cleanup
-    [self.shortcutView unbind:@"enabled"];
+    id _constantShortcutMonitor1;
+    id _constantShortcutMonitor2;
 }
 
 #pragma mark - NSApplicationDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Shortcut view will follow and modify user preferences automatically
-    self.shortcutView.associatedUserDefaultsKey = kPreferenceKeyShortcut;
-    
-    // Activate the global keyboard shortcut if it was enabled last time
-    [self resetShortcutRegistration];
-
-    // Activate the shortcut Command-F1 if it was enabled
+    // Activate the shortcuts if they were enabled
     [self resetConstantShortcutRegistration];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
 {
     return YES;
-}
-
-#pragma mark - Custom shortcut
-
-- (BOOL)isShortcutEnabled
-{
-    return [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceKeyShortcutEnabled];
-}
-
-- (void)setShortcutEnabled:(BOOL)enabled
-{
-    if (self.shortcutEnabled != enabled) {
-        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:kPreferenceKeyShortcutEnabled];
-        [self resetShortcutRegistration];
-    }
-}
-
-- (void)resetShortcutRegistration
-{
-    if (self.shortcutEnabled) {
-        [MASShortcut registerGlobalShortcutWithUserDefaultsKey:kPreferenceKeyShortcut handler:^{
-            [[NSAlert alertWithMessageText:NSLocalizedString(@"Global hotkey has been pressed.", @"Alert message for custom shortcut")
-                             defaultButton:NSLocalizedString(@"OK", @"Default button for the alert on custom shortcut")
-                           alternateButton:nil otherButton:nil informativeTextWithFormat:@""] runModal];
-        }];
-    }
-    else {
-        [MASShortcut unregisterGlobalShortcutWithUserDefaultsKey:kPreferenceKeyShortcut];
-    }
 }
 
 #pragma mark - Constant shortcut
@@ -95,15 +39,22 @@ NSString *const kPreferenceKeyConstantShortcutEnabled = @"DemoConstantShortcutEn
 - (void)resetConstantShortcutRegistration
 {
     if (self.constantShortcutEnabled) {
-        MASShortcut *shortcut = [MASShortcut shortcutWithKeyCode:kVK_F1 modifierFlags:NSCommandKeyMask];
-        _constantShortcutMonitor = [MASShortcut addGlobalHotkeyMonitorWithShortcut:shortcut handler:^{
+        MASShortcut *shortcut1 = [MASShortcut shortcutWithKeyCode:kVK_F1 modifierFlags:NSCommandKeyMask];
+        _constantShortcutMonitor1 = [MASShortcut addGlobalHotkeyMonitorWithShortcut:shortcut1 handler:^{
             [[NSAlert alertWithMessageText:NSLocalizedString(@"⌘F1 has been pressed.", @"Alert message for constant shortcut")
+                             defaultButton:NSLocalizedString(@"OK", @"Default button for the alert on constant shortcut")
+                           alternateButton:nil otherButton:nil informativeTextWithFormat:@""] runModal];
+        }];
+        MASShortcut *shortcut2 = [MASShortcut shortcutWithKeyCode:kVK_F2 modifierFlags:NSCommandKeyMask];
+        _constantShortcutMonitor2 = [MASShortcut addGlobalHotkeyMonitorWithShortcut:shortcut2 handler:^{
+            [[NSAlert alertWithMessageText:NSLocalizedString(@"⌘F2 has been pressed.", @"Alert message for constant shortcut")
                              defaultButton:NSLocalizedString(@"OK", @"Default button for the alert on constant shortcut")
                            alternateButton:nil otherButton:nil informativeTextWithFormat:@""] runModal];
         }];
     }
     else {
-        [MASShortcut removeGlobalHotkeyMonitor:_constantShortcutMonitor];
+        [MASShortcut removeGlobalHotkeyMonitor:_constantShortcutMonitor1], _constantShortcutMonitor1 = nil;
+        [MASShortcut removeGlobalHotkeyMonitor:_constantShortcutMonitor2], _constantShortcutMonitor2 = nil;
     }
 }
 

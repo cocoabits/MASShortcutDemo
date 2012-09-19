@@ -5,8 +5,11 @@
 
 NSString *const kPreferenceKeyShortcut = @"DemoShortcut";
 NSString *const kPreferenceKeyShortcutEnabled = @"DemoShortcutEnabled";
+NSString *const kPreferenceKeyConstantShortcutEnabled = @"DemoConstantShortcutEnabled";
 
-@implementation AppDelegate
+@implementation AppDelegate {
+    __weak id _constantShortcutMonitor;
+}
 
 @synthesize window = _window;
 @synthesize shortcutView = _shortcutView;
@@ -34,6 +37,9 @@ NSString *const kPreferenceKeyShortcutEnabled = @"DemoShortcutEnabled";
     
     // Activate the global keyboard shortcut if it was enabled last time
     [self resetShortcutRegistration];
+
+    // Activate the shortcut Command-F1 if it was enabled
+    [self resetConstantShortcutRegistration];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
@@ -41,7 +47,7 @@ NSString *const kPreferenceKeyShortcutEnabled = @"DemoShortcutEnabled";
     return YES;
 }
 
-#pragma mark -
+#pragma mark - Custom shortcut
 
 - (BOOL)isShortcutEnabled
 {
@@ -60,16 +66,43 @@ NSString *const kPreferenceKeyShortcutEnabled = @"DemoShortcutEnabled";
 {
     if (self.shortcutEnabled) {
         [MASShortcut registerGlobalShortcutWithUserDefaultsKey:kPreferenceKeyShortcut handler:^{
-            if ([NSRunningApplication currentApplication].isActive) {
-                [[NSApp windows].lastObject zoom:nil];
-            }
-            else {
-                [NSApp requestUserAttention:NSInformationalRequest];
-            }
+            [[NSAlert alertWithMessageText:NSLocalizedString(@"Global hotkey has been pressed.", @"Alert message for custom shortcut")
+                             defaultButton:NSLocalizedString(@"OK", @"Default button for the alert on custom shortcut")
+                           alternateButton:nil otherButton:nil informativeTextWithFormat:@""] runModal];
         }];
     }
     else {
         [MASShortcut unregisterGlobalShortcutWithUserDefaultsKey:kPreferenceKeyShortcut];
+    }
+}
+
+#pragma mark - Constant shortcut
+
+- (BOOL)isConstantShortcutEnabled
+{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceKeyConstantShortcutEnabled];
+}
+
+- (void)setConstantShortcutEnabled:(BOOL)enabled
+{
+    if (self.constantShortcutEnabled != enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:kPreferenceKeyConstantShortcutEnabled];
+        [self resetConstantShortcutRegistration];
+    }
+}
+
+- (void)resetConstantShortcutRegistration
+{
+    if (self.constantShortcutEnabled) {
+        MASShortcut *shortcut = [MASShortcut shortcutWithKeyCode:kVK_F1 modifierFlags:NSCommandKeyMask];
+        _constantShortcutMonitor = [MASShortcut addGlobalHotkeyMonitorWithShortcut:shortcut handler:^{
+            [[NSAlert alertWithMessageText:NSLocalizedString(@"⌘F1 has been pressed.", @"Alert message for constant shortcut")
+                             defaultButton:NSLocalizedString(@"OK", @"Default button for the alert on constant shortcut")
+                           alternateButton:nil otherButton:nil informativeTextWithFormat:@""] runModal];
+        }];
+    }
+    else {
+        [MASShortcut removeGlobalHotkeyMonitor:_constantShortcutMonitor];
     }
 }
 

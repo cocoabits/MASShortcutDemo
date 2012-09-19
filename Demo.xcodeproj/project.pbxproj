@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D71519301609CA1B005AAD95 /* MASShortcut+Monitoring.m in Sources */ = {isa = PBXBuildFile; fileRef = D715192F1609CA1B005AAD95 /* MASShortcut+Monitoring.m */; };
 		D7FB692315A6E9FF00239C16 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7FB692215A6E9FF00239C16 /* Cocoa.framework */; };
 		D7FB694615A6F5D300239C16 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7FB694515A6F5D300239C16 /* Carbon.framework */; };
 		D7FB695215A6FC2A00239C16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB695115A6FC2A00239C16 /* AppDelegate.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D715192E1609CA1B005AAD95 /* MASShortcut+Monitoring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MASShortcut+Monitoring.h"; path = "MASShortcut/MASShortcut+Monitoring.h"; sourceTree = "<group>"; };
+		D715192F1609CA1B005AAD95 /* MASShortcut+Monitoring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MASShortcut+Monitoring.m"; path = "MASShortcut/MASShortcut+Monitoring.m"; sourceTree = "<group>"; };
 		D7FB691E15A6E9FF00239C16 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7FB692215A6E9FF00239C16 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D7FB692515A6E9FF00239C16 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -123,6 +126,8 @@
 				D7FB696215A70DA500239C16 /* MASShortcutView+UserDefaults.m */,
 				D7FB696415A7299800239C16 /* MASShortcut+UserDefaults.h */,
 				D7FB696D15A7435C00239C16 /* MASShortcut+UserDefaults.m */,
+				D715192E1609CA1B005AAD95 /* MASShortcut+Monitoring.h */,
+				D715192F1609CA1B005AAD95 /* MASShortcut+Monitoring.m */,
 			);
 			name = MASShortcut;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 				D7FB695F15A6FE4500239C16 /* MASShortcutView.m in Sources */,
 				D7FB696315A70DA500239C16 /* MASShortcutView+UserDefaults.m in Sources */,
 				D7FB696E15A7435C00239C16 /* MASShortcut+UserDefaults.m in Sources */,
+				D71519301609CA1B005AAD95 /* MASShortcut+Monitoring.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

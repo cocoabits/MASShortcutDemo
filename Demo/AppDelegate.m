@@ -19,6 +19,8 @@ NSString *const kPreferenceKeyConstantShortcutEnabled = @"DemoConstantShortcutEn
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+
     // Checkbox will enable and disable the shortcut view
     [self.shortcutView bind:@"enabled" toObject:self withKeyPath:@"shortcutEnabled" options:nil];
 }
@@ -35,7 +37,7 @@ NSString *const kPreferenceKeyConstantShortcutEnabled = @"DemoConstantShortcutEn
 {
     // Shortcut view will follow and modify user preferences automatically
     self.shortcutView.associatedUserDefaultsKey = kPreferenceKeyShortcut;
-    
+
     // Activate the global keyboard shortcut if it was enabled last time
     [self resetShortcutRegistration];
 
@@ -95,9 +97,9 @@ NSString *const kPreferenceKeyConstantShortcutEnabled = @"DemoConstantShortcutEn
 - (void)resetConstantShortcutRegistration
 {
     if (self.constantShortcutEnabled) {
-        MASShortcut *shortcut = [MASShortcut shortcutWithKeyCode:kVK_F1 modifierFlags:NSCommandKeyMask];
+        MASShortcut *shortcut = [MASShortcut shortcutWithKeyCode:kVK_F2 modifierFlags:NSCommandKeyMask];
         _constantShortcutMonitor = [MASShortcut addGlobalHotkeyMonitorWithShortcut:shortcut handler:^{
-            [[NSAlert alertWithMessageText:NSLocalizedString(@"⌘F1 has been pressed.", @"Alert message for constant shortcut")
+            [[NSAlert alertWithMessageText:NSLocalizedString(@"⌘F2 has been pressed.", @"Alert message for constant shortcut")
                              defaultButton:NSLocalizedString(@"OK", @"Default button for the alert on constant shortcut")
                            alternateButton:nil otherButton:nil informativeTextWithFormat:@""] runModal];
         }];

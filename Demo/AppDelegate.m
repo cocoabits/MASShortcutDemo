@@ -4,9 +4,9 @@
 #import "MASShortcut+UserDefaults.h"
 #import "MASShortcut+Monitoring.h"
 
-NSString *const kPreferenceKeyShortcut = @"DemoShortcut";
-NSString *const kPreferenceKeyShortcutEnabled = @"DemoShortcutEnabled";
-NSString *const kPreferenceKeyConstantShortcutEnabled = @"DemoConstantShortcutEnabled";
+NSString *const MASPreferenceKeyShortcut = @"MASDemoShortcut";
+NSString *const MASPreferenceKeyShortcutEnabled = @"MASDemoShortcutEnabled";
+NSString *const MASPreferenceKeyConstantShortcutEnabled = @"MASDemoConstantShortcutEnabled";
 
 @implementation AppDelegate {
     __weak id _constantShortcutMonitor;
@@ -35,8 +35,12 @@ NSString *const kPreferenceKeyConstantShortcutEnabled = @"DemoConstantShortcutEn
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    // Uncomment the following lines to make Command-Shift-D the default shortcut
+//    MASShortcut *defaultShortcut = [MASShortcut shortcutWithKeyCode:0x2 modifierFlags:NSCommandKeyMask|NSShiftKeyMask];
+//    [MASShortcut setGlobalShortcut:defaultShortcut forUserDefaultsKey:MASPreferenceKeyShortcut];
+
     // Shortcut view will follow and modify user preferences automatically
-    self.shortcutView.associatedUserDefaultsKey = kPreferenceKeyShortcut;
+    self.shortcutView.associatedUserDefaultsKey = MASPreferenceKeyShortcut;
 
     // Activate the global keyboard shortcut if it was enabled last time
     [self resetShortcutRegistration];
@@ -54,13 +58,13 @@ NSString *const kPreferenceKeyConstantShortcutEnabled = @"DemoConstantShortcutEn
 
 - (BOOL)isShortcutEnabled
 {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceKeyShortcutEnabled];
+    return [[NSUserDefaults standardUserDefaults] boolForKey:MASPreferenceKeyShortcutEnabled];
 }
 
 - (void)setShortcutEnabled:(BOOL)enabled
 {
     if (self.shortcutEnabled != enabled) {
-        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:kPreferenceKeyShortcutEnabled];
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:MASPreferenceKeyShortcutEnabled];
         [self resetShortcutRegistration];
     }
 }
@@ -68,14 +72,14 @@ NSString *const kPreferenceKeyConstantShortcutEnabled = @"DemoConstantShortcutEn
 - (void)resetShortcutRegistration
 {
     if (self.shortcutEnabled) {
-        [MASShortcut registerGlobalShortcutWithUserDefaultsKey:kPreferenceKeyShortcut handler:^{
+        [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MASPreferenceKeyShortcut handler:^{
             [[NSAlert alertWithMessageText:NSLocalizedString(@"Global hotkey has been pressed.", @"Alert message for custom shortcut")
                              defaultButton:NSLocalizedString(@"OK", @"Default button for the alert on custom shortcut")
                            alternateButton:nil otherButton:nil informativeTextWithFormat:@""] runModal];
         }];
     }
     else {
-        [MASShortcut unregisterGlobalShortcutWithUserDefaultsKey:kPreferenceKeyShortcut];
+        [MASShortcut unregisterGlobalShortcutWithUserDefaultsKey:MASPreferenceKeyShortcut];
     }
 }
 
@@ -83,13 +87,13 @@ NSString *const kPreferenceKeyConstantShortcutEnabled = @"DemoConstantShortcutEn
 
 - (BOOL)isConstantShortcutEnabled
 {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceKeyConstantShortcutEnabled];
+    return [[NSUserDefaults standardUserDefaults] boolForKey:MASPreferenceKeyConstantShortcutEnabled];
 }
 
 - (void)setConstantShortcutEnabled:(BOOL)enabled
 {
     if (self.constantShortcutEnabled != enabled) {
-        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:kPreferenceKeyConstantShortcutEnabled];
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:MASPreferenceKeyConstantShortcutEnabled];
         [self resetConstantShortcutRegistration];
     }
 }
